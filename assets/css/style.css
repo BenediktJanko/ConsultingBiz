@@ -10312,7 +10312,7 @@ hero-btn {
       transform: rotate(-45deg) translate(6px, -7px); }
   .mobile_menu .mobile-menu-wrapper {
     display: none;
-    background: #fff;
+    background:#000000;
     position: absolute;
     top: 0;
     left: 0;
@@ -10450,7 +10450,8 @@ hero-btn {
         top: 50%;
         transform: translateY(-50%); }
     .slider-area .hero__caption h1, .slider-area .hero__caption .h1 {
-      font-size: 85px;
+      font-size: 70px;
+      padding-right: 225px;
       font-weight: 800;
       margin-bottom: 14px;
       color: #ffffff;
