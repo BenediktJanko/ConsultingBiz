@@ -86,7 +86,7 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-color-rgb: 33, 37, 41;
-  --bs-body-bg: #fff;
+  --bs-body-bg: #141313;
   --bs-body-bg-rgb: 255, 255, 255;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
@@ -10051,7 +10051,7 @@ hero-btn {
 .section-tittle h2, .section-tittle .h2 {
   font-size: 50px;
   display: block;
-  color: #092c3f;
+  color: #ffffff;
   font-weight: 900; }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
     .section-tittle h2, .section-tittle .h2 {
@@ -10192,7 +10192,7 @@ hero-btn {
     position: relative;
     z-index: 1; }
     .main-header .main-menu ul li a {
-      color: #0d2d3e;
+      color: #ffffff;
       font-weight: 400;
       padding: 39px 19px;
       display: block;
@@ -10207,7 +10207,7 @@ hero-btn {
         .main-header .main-menu ul li a {
           padding: 39px 14px; } }
     .main-header .main-menu ul li:hover > a {
-      color: #14435c; }
+      color: #89d6ff; }
     .main-header .main-menu ul li:last-child a {
       padding-right: 0; }
   .main-header .main-menu ul ul.submenu {
@@ -10268,7 +10268,7 @@ hero-btn {
   -o-transform: rotateY(180deg); }
 
 .header-area .header-sticky.sticky-bar {
-  background: #fff; }
+  background: #161616; }
   .header-area .header-sticky.sticky-bar .main-menu nav > ul > li > a {
     padding: 25px 20px !important; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -10312,7 +10312,7 @@ hero-btn {
       transform: rotate(-45deg) translate(6px, -7px); }
   .mobile_menu .mobile-menu-wrapper {
     display: none;
-    background:#000000;
+    background: #161616;
     position: absolute;
     top: 0;
     left: 0;
@@ -10442,8 +10442,8 @@ hero-btn {
       .slider-area .hero__caption span::before {
         position: absolute;
         content: "";
-        width: 70px;
-        height: 2px;
+        width: 0px;
+        height: 0px;
         background: #eb566c;
         top: 0;
         left: 0px;
@@ -10479,7 +10479,7 @@ hero-btn {
           line-height: 1.2; } }
     .slider-area .hero__caption p {
       font-size: 16px;
-      color: #000000;
+      color: #ffffff;
       font-family: "Roboto", sans-serif;
       margin-bottom: 39px;
       margin-bottom: 7px;
@@ -10619,7 +10619,7 @@ hero-btn {
     color: #1b4962; }
 
 .categories-area {
-  background: #f7f7f7; }
+  background: #141313; }
   .categories-area .single-cat {
     border: 9px solid transparent;
     padding: 30px 22px;
@@ -10785,7 +10785,7 @@ hero-btn {
       padding: 0; }
 
 .services-area {
-  background: #f7f7f7; }
+  background: #141313; }
   @media only screen and (min-width: 576px) and (max-width: 767px) {
     .services-area .single-services {
       margin-bottom: 30px; } }
@@ -13483,7 +13483,7 @@ del {
 
 .case-studies-area {
   padding: 100px 0;
-  background-color: #f8f9fa; }
+  background-color: #141313; }
   .case-studies-area .case-study-card {
     background: #fff;
     border-radius: 10px;
@@ -13856,7 +13856,7 @@ del {
     .video-intro-area .video-content h2, .video-intro-area .video-content .h2 {
       font-size: 36px;
       margin-bottom: 20px;
-      color: #092c3f; }
+      color: #ffffff; }
     .video-intro-area .video-content p {
       font-size: 16px;
       line-height: 1.8;
