@@ -10519,7 +10519,6 @@ hero-btn {
   .hero-overly2::before {
     position: absolute;
     content: "";
-    background-color: rgba(13, 45, 62, 0.8);
     width: 100%;
     height: 100%;
     left: 0;
