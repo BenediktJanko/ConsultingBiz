@@ -13375,57 +13375,6 @@ del {
   position: relative;
   overflow: hidden; }
 
-.swiper-button-prev,
-.swiper-button-next {
-  width: 60px !important;
-  height: 60px !important;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  color: #14435c;
-  transition: all 0.3s ease; }
-  .swiper-button-prev::after,
-  .swiper-button-next::after {
-    display: none; }
-  .swiper-button-prev i,
-  .swiper-button-next i {
-    font-size: 18px;
-    line-height: 60px; }
-  .swiper-button-prev:hover,
-  .swiper-button-next:hover {
-    background: #14435c;
-    color: #fff; }
-
-.slider-active .swiper-button-prev,
-.slider-active .swiper-button-next {
-  opacity: 0;
-  visibility: hidden; }
-.slider-active:hover .swiper-button-prev,
-.slider-active:hover .swiper-button-next {
-  opacity: 1;
-  visibility: visible; }
-@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
-  .slider-active .swiper-button-prev,
-  .slider-active .swiper-button-next {
-    display: none; } }
-
-.h1-testimonial-active .swiper-button-prev {
-  left: -60px; }
-  @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .h1-testimonial-active .swiper-button-prev {
-      left: 10px; } }
-.h1-testimonial-active .swiper-button-next {
-  right: -60px; }
-  @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .h1-testimonial-active .swiper-button-next {
-      right: 10px; } }
-@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
-  .h1-testimonial-active .swiper-button-prev,
-  .h1-testimonial-active .swiper-button-next {
-    display: none; } }
-
-.brand-active .swiper-button-prev,
-.brand-active .swiper-button-next {
-  display: none; }
 
 .swiper-slide [data-animation] {
   opacity: 0; }
