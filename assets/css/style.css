@@ -14991,3 +14991,28 @@ textarea:focus-visible,
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important; } }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .bedna{
+      height: 400px;
+      transition: transform 0.3s ease;
+    }
+    .bedna:hover{
+      transform: scale(1.3);
+    }
+
+
+
+
+
