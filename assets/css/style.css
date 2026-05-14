@@ -8264,7 +8264,7 @@ h5,
 h6,
 .h6 {
   font-family: "Roboto", sans-serif;
-  color: #092c3f;
+  color:white;
   margin-top: 0px;
   font-style: normal;
   font-weight: 500;
@@ -12236,7 +12236,7 @@ hero-btn {
     font-size: 16px;
     margin-bottom: 0;
     font-size: 16px;
-    color: #2a2a2a; }
+    color:white; }
     .contact-info .media-body h3 a:hover, .contact-info .media-body .h3 a:hover {
       color: #1f2b7b; }
   .contact-info .media-body p {
@@ -14161,13 +14161,13 @@ del {
       border-radius: 30px;
       font-size: 14px;
       font-weight: 600;
-      color: #092c3f;
+      color:white;
       cursor: pointer;
       transition: all 0.3s ease; }
       .portfolio-area .portfolio-filter .filter-btn:hover, .portfolio-area .portfolio-filter .filter-btn.active {
         background: #14435c;
         border-color: #14435c;
-        color: #fff; }
+        color:white; }
   .portfolio-area .portfolio-card {
     background: #fff;
     border-radius: 10px;
