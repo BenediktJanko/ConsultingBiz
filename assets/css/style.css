@@ -11151,6 +11151,9 @@ hero-btn {
         color: #bdbdbd;
         font-size: 16px; }
   .footer-area .footer-bottom {
+    display: flex;
+    justify-content: center;
+    
     padding-bottom: 50px;
     padding-top: 30px; }
     .footer-area .footer-bottom .footer-copy-right p {
@@ -14932,14 +14935,6 @@ textarea:focus-visible,
   white-space: nowrap;
   border: 0; }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important; } }
 
 
 
@@ -14955,12 +14950,15 @@ textarea:focus-visible,
 
     .bedna{
       height: 400px;
-      transition: transform 0.3s ease;
+      display: block;
+      transition: 0.3s ease;
+
     }
     .bedna:hover{
       transform: scale(1.3);
     }
 
+    
 
 
 
