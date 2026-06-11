@@ -5,9 +5,9 @@
     <title>Škibi Bedny</title>
 
     <style>
-        /* Základní stylování a prémiové tmavé pozadí */
+        /* Základní stylování a prémiové tmavé pozadí s designovým nádechem */
         body {
-            background: radial-gradient(circle at center, #222222 0%, #0a0a0a 100%);
+            background: radial-gradient(circle at center, #2c2512 0%, #141414 70%, #0a0a0a 100%);
             color: white;
             font-family: 'Segoe UI', Roboto, Arial, sans-serif;
             display: flex;
@@ -31,26 +31,27 @@
 
         /* --- DEKORACE V POZADÍ (FOTKY) --- */
 
-        /* Postava z fotky v pravém dolním rohu */
+        /* Postava oříznutá z fotky h1_hero.jpg v pravém dolním rohu */
         .character-bg {
             position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 420px;
-            height: 420px;
+            bottom: -20px;
+            right: -50px;
+            width: 550px;
+            height: 550px;
             background-image: url('h1_hero.jpg');
-            background-size: cover;
-            background-position: right center;
+            background-size: 190%; /* Zvětšení pro zaměření na postavu */
+            background-position: 88% 75%; /* Zaměření čistě na postavu agenta */
             background-repeat: no-repeat;
-            opacity: 0.5; /* Jemné prolnutí */
+            opacity: 0.65; /* Vyvážené prolnutí */
             pointer-events: none;
             z-index: 1;
-            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%), 
-                                linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
-            mask-image: linear-gradient(to top, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%), 
-                        linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%), 
+                                linear-gradient(to left, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to top, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%), 
+                        linear-gradient(to left, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
             mask-composite: intersect;
             -webkit-mask-composite: source-in;
+            filter: drop-shadow(-10px -10px 30px rgba(235, 171, 5, 0.1));
         }
 
         /* Společný styl pro dekorační bedny v pozadí */
@@ -58,41 +59,41 @@
             position: absolute;
             background-size: contain;
             background-repeat: no-repeat;
-            opacity: 0.35; /* Zajišťuje, že web není přeplácaný */
+            opacity: 0.45; /* Zřetelné, ale nepřeplácané */
             pointer-events: none;
             z-index: 1;
-            filter: drop-shadow(0 0 20px rgba(202, 171, 5, 0.15));
+            filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 20px rgba(202, 171, 5, 0.15));
             transition: all 0.5s ease;
         }
 
         /* Bedna 1 - Hvězda/Křídla (vlevo dole) */
         .box-star {
-            bottom: 5%;
-            left: 4%;
-            width: 240px;
-            height: 240px;
+            bottom: 8%;
+            left: 5%;
+            width: 260px;
+            height: 260px;
             background-image: url('Bedna_AI_1.webp');
-            transform: rotate(-8deg);
+            transform: rotate(-10deg);
         }
 
         /* Bedna 2 - Pavouk (vlevo nahoře) */
         .box-spider {
             top: 15%;
-            left: 2%;
-            width: 200px;
-            height: 200px;
+            left: 3%;
+            width: 210px;
+            height: 210px;
             background-image: url('Bedna_AI_2.webp');
-            transform: rotate(12deg);
+            transform: rotate(14deg);
         }
 
-        /* Bedna 3 - Duhový trojúhelník (uprostřed vlevo pod podélnou osou) */
+        /* Bedna 3 - Duhový trojúhelník (uprostřed vlevo) */
         .box-rainbow {
-            bottom: 40%;
-            left: 8%;
-            width: 170px;
-            height: 170px;
+            bottom: 42%;
+            left: 12%;
+            width: 180px;
+            height: 180px;
             background-image: url('Bedna_AI_3.webp');
-            transform: rotate(-5deg);
+            transform: rotate(-4deg);
         }
 
         /* --- HLAVNÍ OBSAH --- */
@@ -102,6 +103,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            background: rgba(20, 20, 20, 0.65);
+            padding: 40px 60px;
+            border-radius: 16px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(202, 171, 5, 0.15);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
         /* Tlačítko zpět */
@@ -149,15 +156,15 @@
 
         /* Nadpis se zlatým přechodem */
         h1 {
-            margin-top: 40px;
+            margin-top: 0;
             margin-bottom: 40px;
-            font-size: 36px;
+            font-size: 38px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             background: linear-gradient(180deg, #ffea79 0%, #caab05 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 3px 6px rgba(0,0,0,0.6);
+            text-shadow: 0 3px 8px rgba(0,0,0,0.8);
             font-weight: 800;
         }
 
@@ -213,12 +220,6 @@
             padding: 5px;
             box-sizing: border-box;
             color: #e0e0e0;
-        }
-
-        .item img {
-            width: 100px;
-            height: auto;
-            margin-bottom: 10px;
         }
 
         /* Rarity spodní linky */
@@ -287,9 +288,7 @@
 
         <div class="roulette-wrapper">
             <div class="selector"></div>
-
-            <div id="roll-strip">
-                </div>
+            <div id="roll-strip"></div>
         </div>
 
         <button id="spin-btn" onclick="spin()">Otevřít (Spin)</button>
@@ -299,7 +298,7 @@
         const strip = document.getElementById('roll-strip');
         const btn = document.getElementById('spin-btn');
 
-        // Seznam skinů (Původní logika zachována)
+        // Seznam skinů
         const skins = [
             { name: "AK-47 Slate", rarity: "mil-spec" },
             { name: "M4A4 Griffin", rarity: "restricted" },
