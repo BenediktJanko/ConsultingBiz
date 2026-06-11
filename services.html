@@ -5,10 +5,11 @@
     <title>Škibi Bedny</title>
 
     <style>
+        /* Základní stylování a prémiové tmavé pozadí */
         body {
-            background-color: #1a1a1a;
+            background: radial-gradient(circle at center, #222222 0%, #0a0a0a 100%);
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -16,6 +17,91 @@
             height: 100vh;
             margin: 0;
             overflow: hidden;
+            position: relative;
+        }
+
+        /* Dekorační horní zlatá linka */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, #caab05, #ffea79, #caab05);
+            z-index: 10;
+        }
+
+        /* --- DEKORACE V POZADÍ (FOTKY) --- */
+
+        /* Postava z fotky v pravém dolním rohu */
+        .character-bg {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 420px;
+            height: 420px;
+            background-image: url('h1_hero.jpg');
+            background-size: cover;
+            background-position: right center;
+            background-repeat: no-repeat;
+            opacity: 0.5; /* Jemné prolnutí */
+            pointer-events: none;
+            z-index: 1;
+            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%), 
+                                linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to top, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%), 
+                        linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+            mask-composite: intersect;
+            -webkit-mask-composite: source-in;
+        }
+
+        /* Společný styl pro dekorační bedny v pozadí */
+        .ambient-box {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.35; /* Zajišťuje, že web není přeplácaný */
+            pointer-events: none;
+            z-index: 1;
+            filter: drop-shadow(0 0 20px rgba(202, 171, 5, 0.15));
+            transition: all 0.5s ease;
+        }
+
+        /* Bedna 1 - Hvězda/Křídla (vlevo dole) */
+        .box-star {
+            bottom: 5%;
+            left: 4%;
+            width: 240px;
+            height: 240px;
+            background-image: url('Bedna_AI_1.webp');
+            transform: rotate(-8deg);
+        }
+
+        /* Bedna 2 - Pavouk (vlevo nahoře) */
+        .box-spider {
+            top: 15%;
+            left: 2%;
+            width: 200px;
+            height: 200px;
+            background-image: url('Bedna_AI_2.webp');
+            transform: rotate(12deg);
+        }
+
+        /* Bedna 3 - Duhový trojúhelník (uprostřed vlevo pod podélnou osou) */
+        .box-rainbow {
+            bottom: 40%;
+            left: 8%;
+            width: 170px;
+            height: 170px;
+            background-image: url('Bedna_AI_3.webp');
+            transform: rotate(-5deg);
+        }
+
+        /* --- HLAVNÍ OBSAH --- */
+        .main-content {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         /* Tlačítko zpět */
@@ -25,29 +111,31 @@
             left: 20px;
             width: 50px;
             height: 50px;
-            background: #222;
-            border: 2px solid #555;
+            background: #111;
+            border: 2px solid #caab05;
             border-radius: 50%;
-            color: white;
+            color: #caab05;
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 24px;
             transition: 0.3s;
-            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+            box-shadow: 0 0 15px rgba(0,0,0,0.6);
             z-index: 100;
         }
 
         .back-btn:hover {
-            background: #333;
+            background: #caab05;
+            color: #111;
             transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(202, 171, 5, 0.4);
         }
 
         /* Logo nahoře */
         .logo-container {
             position: absolute;
-            top: 15px;
+            top: 25px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 100;
@@ -59,9 +147,18 @@
             object-fit: contain;
         }
 
+        /* Nadpis se zlatým přechodem */
         h1 {
-            margin-top: 80px;
-            margin-bottom: 30px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(180deg, #ffea79 0%, #caab05 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.6);
+            font-weight: 800;
         }
 
         /* Kontejner pro ruletu */
@@ -70,22 +167,23 @@
             width: 800px;
             height: 160px;
             background: #111;
-            border: 2px solid #444;
+            border: 2px solid #caab05;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            box-shadow: 0 0 30px rgba(202, 171, 5, 0.2), inset 0 0 20px rgba(0,0,0,0.9);
         }
 
-        /* Červená ryska */
+        /* Zlatá elegantní ryska */
         .selector {
             position: absolute;
             left: 50%;
             top: 0;
             width: 4px;
             height: 100%;
-            background: #ff4444;
+            background: linear-gradient(180deg, #ffea79, #caab05);
             z-index: 10;
             transform: translateX(-50%);
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            box-shadow: 0 0 12px #caab05;
         }
 
         /* Pás se skiny */
@@ -99,7 +197,7 @@
             will-change: transform;
         }
 
-        /* Skin */
+        /* Stylování slotů se skiny uvnitř rulety */
         .item {
             min-width: 150px;
             height: 100%;
@@ -107,12 +205,14 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border-right: 1px solid #222;
-            background: linear-gradient(180deg, #333 0%, #222 100%);
-            font-size: 12px;
+            border-right: 1px solid #1a1a1a;
+            background: linear-gradient(180deg, #222222 0%, #141414 100%);
+            font-size: 13px;
+            font-weight: 600;
             text-align: center;
             padding: 5px;
             box-sizing: border-box;
+            color: #e0e0e0;
         }
 
         .item img {
@@ -121,68 +221,85 @@
             margin-bottom: 10px;
         }
 
-        /* Rarity */
+        /* Rarity spodní linky */
         .mil-spec { border-bottom: 5px solid #4b69ff; }
         .restricted { border-bottom: 5px solid #8847ff; }
         .classified { border-bottom: 5px solid #d32ee6; }
         .covert { border-bottom: 5px solid #eb4b4b; }
         .gold { border-bottom: 5px solid #caab05; }
 
+        /* Zlato-černé otevírací tlačítko */
         button {
-            margin-top: 30px;
-            padding: 15px 40px;
-            background: #5cb85c;
+            margin-top: 40px;
+            padding: 15px 55px;
+            background: linear-gradient(180deg, #ffea79 0%, #caab05 100%);
             border: none;
-            color: white;
+            color: #0a0a0a;
             font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             cursor: pointer;
-            border-radius: 5px;
-            transition: background 0.3s;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(202, 171, 5, 0.3);
+            transition: all 0.3s ease;
         }
 
         button:hover {
-            background: #4cae4c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(202, 171, 5, 0.5);
+            filter: brightness(1.1);
+        }
+
+        button:active {
+            transform: translateY(1px);
         }
 
         button:disabled {
-            background: #444;
+            background: #333;
+            color: #777;
+            box-shadow: none;
             cursor: not-allowed;
+            transform: none;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Tlačítko zpět -->
     <a href="index.html" class="back-btn">←</a>
 
-    <!-- Logo -->
-                <div class="col-xl-2 col-lg-2">
-              <div class="logo">
-                <a href="index.html" aria-label="ConsultingBiz Home"><img src="assets/img/logo/škibilogo (2).webp"
-                                                                            alt="ConsultingBiz" width="150" height="30"
-                                                                            fetchpriority="high" decoding="sync"></a>
-              </div>
-            </div>
-
-
-    <h1>Otevři svou bednu</h1>
-
-    <div class="roulette-wrapper">
-        <div class="selector"></div>
-
-        <div id="roll-strip">
-            <!-- Generuje JS -->
+    <div class="logo-container">
+        <div class="logo">
+            <a href="index.html" aria-label="ConsultingBiz Home">
+                <img src="assets/img/logo/škibilogo (2).webp" alt="ConsultingBiz" width="150" height="30" fetchpriority="high" decoding="sync">
+            </a>
         </div>
     </div>
 
-    <button id="spin-btn" onclick="spin()">Otevřít (Spin)</button>
+    <div class="character-bg"></div>
+    <div class="ambient-box box-star"></div>
+    <div class="ambient-box box-spider"></div>
+    <div class="ambient-box box-rainbow"></div>
+
+    <div class="main-content">
+        <h1>Otevři svou bednu</h1>
+
+        <div class="roulette-wrapper">
+            <div class="selector"></div>
+
+            <div id="roll-strip">
+                </div>
+        </div>
+
+        <button id="spin-btn" onclick="spin()">Otevřít (Spin)</button>
+    </div>
 
     <script>
         const strip = document.getElementById('roll-strip');
         const btn = document.getElementById('spin-btn');
 
-        // Skiny
+        // Seznam skinů (Původní logika zachována)
         const skins = [
             { name: "AK-47 Slate", rarity: "mil-spec" },
             { name: "M4A4 Griffin", rarity: "restricted" },
@@ -196,40 +313,32 @@
 
         // Inicializace pásu
         function initStrip() {
-
             strip.innerHTML = '';
             strip.style.transition = 'none';
             strip.style.transform = 'translateX(0px)';
 
             for (let i = 0; i < visibleItems; i++) {
-
                 const skin = skins[Math.floor(Math.random() * skins.length)];
-
                 const div = document.createElement('div');
-
                 div.className = `item ${skin.rarity}`;
-
                 div.innerHTML = `
                     <div style="
                         width:80px;
                         height:60px;
-                        background:#444;
+                        background:#333;
                         margin-bottom:10px;
                         border-radius:4px;
+                        box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
                     "></div>
-
                     <span>${skin.name}</span>
                 `;
-
                 strip.appendChild(div);
             }
         }
 
-        // Spin
+        // Funkce pro spin
         function spin() {
-
             btn.disabled = true;
-
             initStrip();
 
             // Vynucení překreslení
@@ -238,36 +347,27 @@
             // Výherní pozice
             const winningIndex = 45;
 
-            // Animace
-            strip.style.transition =
-                'transform 5s cubic-bezier(0.1, 0, 0.1, 1)';
+            // Animace pohybu
+            strip.style.transition = 'transform 5s cubic-bezier(0.1, 0, 0.1, 1)';
 
-            // Náhodný offset
-            const randomOffset =
-                Math.floor(Math.random() * (itemWidth - 10)) + 5;
+            // Náhodný offset uvnitř finálního políčka
+            const randomOffset = Math.floor(Math.random() * (itemWidth - 10)) + 5;
 
-            // Výpočet pozice
-            const targetPos =
-                (winningIndex * itemWidth) - 400 + randomOffset;
+            // Výpočet výsledné pozice
+            const targetPos = (winningIndex * itemWidth) - 400 + randomOffset;
 
-            // Posun
-            strip.style.transform =
-                `translateX(-${targetPos}px)`;
+            // Spuštění posunu
+            strip.style.transform = `translateX(-${targetPos}px)`;
 
-            // Konec animace
+            // Vyhodnocení po skončení animace
             setTimeout(() => {
-
-                const winner =
-                    strip.children[winningIndex].innerText;
-
+                const winner = strip.children[winningIndex].innerText;
                 alert("Padlo ti: " + winner);
-
                 btn.disabled = false;
-
             }, 5000);
         }
 
-        // Start
+        // Prvotní načtení
         initStrip();
     </script>
 
